@@ -11,3 +11,5 @@ print("Panjang list:", len(wildan))
 print("Elemen terbesar:", max(wildan))
 print("Elemen terkecil:", min(wildan))
 print("Jumlah semua elemen:", sum(wildan))
+
+print([d for d in wildan if d > 2])
