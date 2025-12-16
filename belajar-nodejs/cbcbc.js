@@ -1,1 +1,1 @@
-console.log("belajar node")
+console.log("omke gaz omeke gaz")
