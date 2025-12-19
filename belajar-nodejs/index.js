@@ -1,1 +1,3 @@
-console.log("belajar node js")
+const cetakNama = require('./coba');
+
+console.log(cetakNama('Wildan'));
