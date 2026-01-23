@@ -1,2 +1,2 @@
 
-console.log('sudah lama tidak ngoding lagi dan algi');
+console.log('sudah lama tidak ngoding lagi dan lagi');
