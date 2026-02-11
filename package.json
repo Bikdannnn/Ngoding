@@ -1,0 +1,20 @@
+{
+  "name": "ngoding",
+  "version": "1.0.0",
+  "description": "Belajar node js",
+  "homepage": "https://github.com/Bikdannnn/Ngoding#readme",
+  "bugs": {
+    "url": "https://github.com/Bikdannnn/Ngoding/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bikdannnn/Ngoding.git"
+  },
+  "license": "ISC",
+  "author": "M. Wildan Humaidi S. Budi",
+  "type": "commonjs",
+  "main": "apk.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
