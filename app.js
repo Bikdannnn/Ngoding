@@ -6,9 +6,11 @@ const fs = require('fs');
 // console.log(data)
 
 fs.readFile('data/text.txt', 'utf-8', (err, data) => {
-    if (err) {
-        console.log(err);
-    } else {
-        console.log(data);
-    }
+    // if (err) {
+    //     console.log(err);
+    // } else {
+    //     console.log(data);
+    // }
+    if (err) throw err;
+    console.log(data);
 })
