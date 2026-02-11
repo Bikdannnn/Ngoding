@@ -1,3 +1,2 @@
-const cetakNama = require('./coba');
 
-console.log(cetakNama('Wildan'));
+console.log('wildan');
