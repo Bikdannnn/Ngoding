@@ -21,14 +21,16 @@ if (!fs.existsSync(filePath)) {
     fs.writeFileSync(filePath, '[]', 'utf-8');
 }
 
-rl.question('siapa namamu?: ', (nama) => {
-    rl.question('berapa nomor teleponmu?: ', (noHp) => {
-        const contact = { nama, noHp };
-        const file = fs.readFileSync(filePath, 'utf-8');
-        const contacts = JSON.parse(file);
-        contacts.push(contact);
-        fs.writeFileSync(filePath, JSON.stringify(contacts));
-        console.log('terimakasih sudah memasukkan data');
-        rl.close();
-    });
-});
+
+
+// rl.question('siapa namamu?: ', (nama) => {
+//     rl.question('berapa nomor teleponmu?: ', (noHp) => {
+//         const contact = { nama, noHp };
+//         const file = fs.readFileSync(filePath, 'utf-8');
+//         const contacts = JSON.parse(file);
+//         contacts.push(contact);
+//         fs.writeFileSync(filePath, JSON.stringify(contacts));
+//         console.log('terimakasih sudah memasukkan data');
+//         rl.close();
+//     });
+// });
