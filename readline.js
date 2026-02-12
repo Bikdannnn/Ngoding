@@ -21,34 +21,42 @@ if (!fs.existsSync(filePath)) {
     fs.writeFileSync(filePath, '[]', 'utf-8');
 }
 
-const pertanyaan1 = () => {
+const tulisPertanyaan = (pertanyaan) => {
     return new Promise((resolve, reject) => {
-        rl.question('siapa namamu?: ', (nama) => {
-            resolve(nama);
+        rl.question(pertanyaan, (jawaban) => {
+            resolve(jawaban);
         });
     });
 };
 
-const pertanyaan2 = () => {
-    return new Promise((resolve, reject) => {
-        rl.question('berapa nomor teleponmu?: ', (noHp) => {
-            resolve(noHp);
-        });
-    });
-};
+// const pertanyaan1 = () => {
+//     return new Promise((resolve, reject) => {
+//         rl.question('siapa namamu?: ', (nama) => {
+//             resolve(nama);
+//         });
+//     });
+// };
 
-const pertanyaan3 = () => {
-    return new Promise((resolve, reject) => {
-        rl.question('masukkan email kamu?: ', (email) => {
-            resolve(email);
-        });
-    });
-};
+// const pertanyaan2 = () => {
+//     return new Promise((resolve, reject) => {
+//         rl.question('berapa nomor teleponmu?: ', (noHp) => {
+//             resolve(noHp);
+//         });
+//     });
+// };
+
+// const pertanyaan3 = () => {
+//     return new Promise((resolve, reject) => {
+//         rl.question('masukkan email kamu?: ', (email) => {
+//             resolve(email);
+//         });
+//     });
+// };
 
 const main = async () => {
-    const nama = await pertanyaan1();
-    const noHp = await pertanyaan2();
-    const email = await pertanyaan3();
+    const nama = await tulisPertanyaan('siapa namamu?: ');
+    const noHp = await tulisPertanyaan('berapa nomor teleponmu?: ');
+    const email = await tulisPertanyaan('masukkan email kamu?: ');
 
 
      const contact = { nama, noHp, email };
