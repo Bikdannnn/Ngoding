@@ -1,33 +1,20 @@
-const fs = require('fs');
-const readline = require('node:readline');
-const { stdin: input, stdout: output } = require('node:process');
+const {tulisPertanyaan, simpanContact} = require('./contacts.js');
+// const contact = require('./contacts.js');
 
-const rl = readline.createInterface({ input, output });
+const main = async () => {
+    const nama = await tulisPertanyaan('siapa namamu?: ');
+    const noHp = await tulisPertanyaan('berapa nomor teleponmu?: ');
+    const email = await tulisPertanyaan('masukkan email kamu?: ');
 
-// rl.question('siapa namamu?: ', (answer) => {
-//     console.log(`Thank you ${answer}`);
-// rl.question(`dimana kamu tinggal ${answer}? :`, (answer2) => {
-//     console.log(`oh jadi kamu tinggal di ${answer2}`);
-//   rl.close();
-// })});
-
-const dirPath = './data';
-if (!fs.existsSync(dirPath)) {
-    fs.mkdirSync(dirPath);
-}
-
-const filePath = './data/contacts.json';
-if (!fs.existsSync(filePath)) {
-    fs.writeFileSync(filePath, '[]', 'utf-8');
-}
-
-const tulisPertanyaan = (pertanyaan) => {
-    return new Promise((resolve, reject) => {
-        rl.question(pertanyaan, (jawaban) => {
-            resolve(jawaban);
-        });
-    });
+    // const nama = await contact.tulisPertanyaan('siapa namamu?: ');
+    // const noHp = await contact.tulisPertanyaan('berapa nomor teleponmu?: ');
+    // const email = await contact.tulisPertanyaan('masukkan email kamu?: ');
+    
+    simpanContact(nama, noHp, email);
+    //contact.simpanContact(nama, noHp, email);
 };
+
+main();
 
 // const pertanyaan1 = () => {
 //     return new Promise((resolve, reject) => {
@@ -53,22 +40,7 @@ const tulisPertanyaan = (pertanyaan) => {
 //     });
 // };
 
-const main = async () => {
-    const nama = await tulisPertanyaan('siapa namamu?: ');
-    const noHp = await tulisPertanyaan('berapa nomor teleponmu?: ');
-    const email = await tulisPertanyaan('masukkan email kamu?: ');
 
-
-     const contact = { nama, noHp, email };
-        const file = fs.readFileSync(filePath, 'utf-8');
-        const contacts = JSON.parse(file);
-        contacts.push(contact);
-        fs.writeFileSync(filePath, JSON.stringify(contacts));
-        console.log('terimakasih sudah memasukkan data');
-    rl.close();
-};
-
-main();
 // rl.question('siapa namamu?: ', (nama) => {
 //     rl.question('berapa nomor teleponmu?: ', (noHp) => {
 //         const contact = { nama, noHp };
