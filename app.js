@@ -28,6 +28,7 @@ yargs(hideBin(process.argv))
     },
     handler(argv) {
         simpanContact(argv.nama, argv.noHp, argv.email);
-}})
+}
+})
 
 .parse();
