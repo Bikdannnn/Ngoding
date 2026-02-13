@@ -25,10 +25,14 @@ const tulisPertanyaan = (pertanyaan) => {
     });
 };
 
+const loadContact = () => {
+    const file = fs.readFileSync(filePath, 'utf-8');
+    const contacts = JSON.parse(file);
+    return contacts;
+}
 const simpanContact = (nama, noHp, email) => {
     const contact = { nama, noHp, email };
-        const file = fs.readFileSync(filePath, 'utf-8');
-        const contacts = JSON.parse(file);
+    const contacts = loadContact();
 
         //cek duplikar
         const duplicate = contacts.find((contact) => contact.nama === nama);
@@ -58,5 +62,28 @@ const simpanContact = (nama, noHp, email) => {
         console.log('terimakasih sudah memasukkan data');
 };
 
+const listContact = () => {
+    const contacts = loadContact();
+    console.log(chalk.bgBlueBright('Daftar Contact :'));
+    contacts.forEach((contact, i) => {
+        console.log(chalk.white.inverse(`${i + 1}. ${contact.nama} - ${contact.noHp}`));
+    });
+};
 
-module.exports = { simpanContact }; 
+const detailContact = (nama) => {
+    const contacts = loadContact();
+    const contact = contacts.find((contact) => contact.nama.toLowerCase() === nama.toLowerCase());
+
+    if (!contact) {
+        console.log(chalk.red('Contact tidak ditemukan!'));
+        return false;
+    }
+    console.log(chalk.bgBlueBright('Detail Contact :'));
+    console.log(chalk.white.inverse(`Nama : ${contact.nama}`));
+    console.log(chalk.white.inverse(`Nomor Handphone : ${contact.noHp}`));
+    if (contact.email) {
+        console.log(chalk.white.inverse(`Email : ${contact.email}`));
+    }
+};
+
+module.exports = { simpanContact, listContact, detailContact }; 

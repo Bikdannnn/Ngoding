@@ -1,7 +1,7 @@
 const yargs = require('yargs/yargs');
 const { hideBin } = require('yargs/helpers');
 const { demand } = require('yargs');
-const { simpanContact, listContact, detailContact } = require('./contacts');
+const { simpanContact } = require('./contacts');
 
 
 
@@ -29,32 +29,6 @@ yargs(hideBin(process.argv))
     handler(argv) {
         simpanContact(argv.nama, argv.noHp, argv.email);
 }
-}).demandCommand()
+})
 
-//menampilkan semua nama & noHp contact
-yargs(hideBin(process.argv))
-    .command( {
-    command: 'list',
-    describe: 'Menampilkan semua contact',
-    handler() {
-        listContact();
-    }
-}).
-
-
-//menampilkan detail contact
-yargs(hideBin(process.argv))
-    .command( {
-    command: 'detail',
-    describe: 'Menampilkan detail contact berdasarkan nama',
-    builder: {
-        nama: {
-            describe: 'Nama Lengkap',
-            demandOption: true,
-            type: 'string',
-    handler(argv) {
-        detailContact(argv.nama);
-    }}
-}}).
-
-parse();
+.parse();
