@@ -1,64 +1,34 @@
-
-const yargs = require('yargs');
-
-console.log(yargs.argv);
-
-
-
+const yargs = require('yargs/yargs');
+const { hideBin } = require('yargs/helpers');
+const { demand } = require('yargs');
+const { simpanContact } = require('./contacts');
+const {simpanContact} = require('./contacts.js');
 
 
 
-// const {tulisPertanyaan, simpanContact} = require('./contacts.js');
-// // const contact = require('./contacts.js');
+yargs(hideBin(process.argv))
+    .command( {
+    command: 'add',
+    describe: 'Menambahkan Contact Baru',
+    builder: {
+        nama: {
+            describe: 'Nama Lengkap',
+            demandOption: true,
+            type: 'string',
+        },
+        email: {
+            describe: 'Email',
+            demandOption: false,
+            type: 'string',
+        },
+        noHp: {
+            describe: 'Nomor Handphone',
+            demandOption: true,
+            type: 'string',
+        },
+    },
+    handler(argv) {
+        simpanContact(argv.nama, argv.noHp, argv.email);
+}})
 
-// const main = async () => {
-//     const nama = await tulisPertanyaan('siapa namamu?: ');
-//     const noHp = await tulisPertanyaan('berapa nomor teleponmu?: ');
-//     const email = await tulisPertanyaan('masukkan email kamu?: ');
-
-//     // const nama = await contact.tulisPertanyaan('siapa namamu?: ');
-//     // const noHp = await contact.tulisPertanyaan('berapa nomor teleponmu?: ');
-//     // const email = await contact.tulisPertanyaan('masukkan email kamu?: ');
-    
-//     simpanContact(nama, noHp, email);
-//     //contact.simpanContact(nama, noHp, email);
-// };
-
-// main();
-
-// // const pertanyaan1 = () => {
-// //     return new Promise((resolve, reject) => {
-// //         rl.question('siapa namamu?: ', (nama) => {
-// //             resolve(nama);
-// //         });
-// //     });
-// // };
-
-// // const pertanyaan2 = () => {
-// //     return new Promise((resolve, reject) => {
-// //         rl.question('berapa nomor teleponmu?: ', (noHp) => {
-// //             resolve(noHp);
-// //         });
-// //     });
-// // };
-
-// // const pertanyaan3 = () => {
-// //     return new Promise((resolve, reject) => {
-// //         rl.question('masukkan email kamu?: ', (email) => {
-// //             resolve(email);
-// //         });
-// //     });
-// // };
-
-
-// // rl.question('siapa namamu?: ', (nama) => {
-// //     rl.question('berapa nomor teleponmu?: ', (noHp) => {
-// //         const contact = { nama, noHp };
-// //         const file = fs.readFileSync(filePath, 'utf-8');
-// //         const contacts = JSON.parse(file);
-// //         contacts.push(contact);
-// //         fs.writeFileSync(filePath, JSON.stringify(contacts));
-// //         console.log('terimakasih sudah memasukkan data');
-// //         rl.close();
-// //     });
-// // });
+.parse();
