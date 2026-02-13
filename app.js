@@ -2,7 +2,6 @@ const yargs = require('yargs/yargs');
 const { hideBin } = require('yargs/helpers');
 const { demand } = require('yargs');
 const { simpanContact } = require('./contacts');
-const {simpanContact} = require('./contacts.js');
 
 
 
