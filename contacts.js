@@ -96,7 +96,7 @@ const deleteContact = (nama) => {
         return false;
     }
     fs.writeFileSync(filePath, JSON.stringify(newContacts));
-    console.log(chalk.green('Contact berhasil dihapus!')); 
+    console.log(chalk.green(`Data contact ${nama} berhasil dihapus!`)); 
 }
 
 
