@@ -15,6 +15,11 @@ app.get('/contact', (req, res) => {
     res.send('Halaman Contact')
 })
 
+app.use('/', (req, res) => {
+    res.status(404);
+    res.send('Halaman tidak ditemukan: 404');
+});
+
 app.listen(port, () => {
     console.log(`Server berjalan di port http://localhost: ${port}`)
 })
