@@ -4,15 +4,24 @@ const port = 3000
 
 // respond with "hello world" when a GET request is made to the homepage
 app.get('/', (req, res) => {
-  res.send('hello world')
-})
+
+    // res.json({
+    //     nama : 'Wildan',
+    //     email: 'wildan@gmal.com',
+    //     noHp: '081234567890',
+    // });
+
+    //res.send('hello world')
+
+    res.sendFile('./index.html', { root: __dirname });
+});
 
 app.get('/about', (req, res) => {
-    res.send('Halaman About')
+    res.sendFile('./about.html', { root: __dirname });
 })
 
 app.get('/contact', (req, res) => {
-    res.send('Halaman Contact')
+    res.sendFile('./contact.html', { root: __dirname });
 })
 
 app.use('/', (req, res) => {
