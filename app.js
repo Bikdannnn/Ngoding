@@ -1,27 +1,43 @@
 const express = require('express')
+const expressLayouts = require('express-ejs-layouts');
 const app = express()
 const port = 3000
 
-// respond with "hello world" when a GET request is made to the homepage
+app.set('view engine', 'ejs');
+app.use(expressLayouts);
+
 app.get('/', (req, res) => {
 
-    // res.json({
-    //     nama : 'Wildan',
-    //     email: 'wildan@gmal.com',
-    //     noHp: '081234567890',
-    // });
-
-    //res.send('hello world')
-
-    res.sendFile('./index.html', { root: __dirname });
+    const mahasiswa = [
+        { nama: 'Wildan', 
+          email: 'wildan@gmail.com',
+        },
+        { nama: 'anis', 
+          email: 'anis@gmail.com',
+        },
+        { nama: 'gibran', 
+          email: 'gibran@gmail.com',
+        }
+    ];
+    
+    res.render('index', { 
+        nama: 'Wildan Humaidi', 
+        title: 'Home Page',
+        mahasiswa,
+        layout : 'Layout/main-layout'
+    });
 });
 
 app.get('/about', (req, res) => {
-    res.sendFile('./about.html', { root: __dirname });
+    res.render('about', { 
+        title: 'About Page', 
+        layout : 'Layout/main-layout' });
 })
 
 app.get('/contact', (req, res) => {
-    res.sendFile('./contact.html', { root: __dirname });
+    res.render('contact', { 
+        title: 'Contact Page', 
+        layout : 'Layout/main-layout' });
 })
 
 app.get('/product/:id', (req, res) => {
