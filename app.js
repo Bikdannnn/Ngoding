@@ -10,14 +10,6 @@ app.use((req, res, next) => {
     console.log('Time:', Date.now());
     next();
 });
-app.use((req, res, next) => {
-    console.log('ini adalah middleware kedua');
-    next();
-});
-app.use((req, res, next) => {
-    console.log('ini adalah middleware ketiga');
-    next();
-});
 
 app.get('/', (req, res) => {
 
