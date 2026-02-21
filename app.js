@@ -22,8 +22,8 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => {
 
     const mahasiswa = [
-        { nama: 'Wildan', 
-          email: 'wildan@gmail.com',
+        { nama: 'wildan', 
+          email: 'bikdan@gmail.com',
         },
         { nama: 'anis', 
           email: 'anis@gmail.com',
