@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 
     const mahasiswa = [
         { nama: 'wildan', 
-          email: 'bikdan@gmail.com',
+          email: 'wildan@gmail.com',
         },
         { nama: 'anis', 
           email: 'anis@gmail.com',
