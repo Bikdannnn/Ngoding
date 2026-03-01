@@ -33,6 +33,9 @@ app.get('/', (req, res) => {
         },
         { nama: 'raka', 
           email: 'raka@gmail.com',
+        },
+        { nama: 'bowo', 
+          email: 'bowo@gmail.com',
         }
     ];
     
