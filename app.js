@@ -40,6 +40,9 @@ app.get('/', (req, res) => {
         { nama: 'fahrul', 
           email: 'fahrul@gmail.com',
         },
+        { nama: 'alif', 
+          email: 'alif@gmail.com',
+        }
     ]
     
     res.render('index', { 
