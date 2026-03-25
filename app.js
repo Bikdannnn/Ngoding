@@ -48,6 +48,9 @@ app.get('/', (req, res) => {
         },
         { nama: 'habib', 
           email: 'habib@gmail.com',
+        },
+        { nama: 'faiz', 
+          email: 'faiz@gmail.com',
         }
     ]
     
