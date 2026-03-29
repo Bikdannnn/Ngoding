@@ -31,6 +31,9 @@ app.get('/', (req, res) => {
         { nama: 'brando', 
           email: 'brando@gmail.com',
         },
+        { nama: ',mute', 
+          email: 'mute@gmail.com',
+        },
         { nama: 'aisy', 
           email: 'aisy@gmail.com',
         },
@@ -52,8 +55,8 @@ app.get('/', (req, res) => {
         { nama: 'faiz', 
           email: 'faiz@gmail.com',
         },
-        { nama: ',mute', 
-          email: 'mute@gmail.com',
+        { nama: ',ikki', 
+          email: 'ikki@gmail.com',
         }
     ]
     
