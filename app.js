@@ -75,9 +75,6 @@ app.get('/', (req, res) => {
         },
         { nama: 'tisa', 
           email: 'tisa@gmail.com',
-        },
-        { nama: 'may', 
-          email: 'may@gmail.com',
         }
     ]
     
