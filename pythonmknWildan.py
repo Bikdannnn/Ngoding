@@ -51,10 +51,10 @@ h = 0.10
 # Perhitungan Solusi Eksak
 sejati = math.tan(b)
 
-# Eksekusi Program
-print("=== HASIL PROGRAM KOMPUTER UNTUK y({b}) ===")
-print("Solusi Sejati       : {sejati:.10f}")
-print("Metode Euler        : {euler(x0, y0, b, h):.10f}")
-print("Metode Heun         : {heun(x0, y0, b, h):.10f}")
-print("Runge-Kutta Orde 3  : {rk3(x0, y0, b, h):.10f}")
-print("Runge-Kutta Orde 4  : {rk4(x0, y0, b, h):.10f}")
+# Jalur alternatif jika versi Python Anda di bawah 3.6
+print("=== HASIL PROGRAM KOMPUTER UNTUK y({}) ===".format(b))
+print("Solusi Sejati       : {:.10f}".format(sejati))
+print("Metode Euler        : {:.10f}".format(euler(x0, y0, b, h)))
+print("Metode Heun         : {:.10f}".format(heun(x0, y0, b, h)))
+print("Runge-Kutta Orde 3  : {:.10f}".format(rk3(x0, y0, b, h)))
+print("Runge-Kutta Orde 4  : {:.10f}".format(rk4(x0, y0, b, h)))
