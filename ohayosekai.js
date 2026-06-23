@@ -1,1 +1,0 @@
-print("Ohayo sekai")
