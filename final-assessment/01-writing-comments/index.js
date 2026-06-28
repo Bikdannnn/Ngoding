@@ -5,4 +5,5 @@
  * 1. Magang.
  * 2. Menjadi Manusia Yang Hari Demi Hari Lebih Baik.
  * 3. Bersyukur Dan Istiqomah.
+ * 4. Konsisten
  */
